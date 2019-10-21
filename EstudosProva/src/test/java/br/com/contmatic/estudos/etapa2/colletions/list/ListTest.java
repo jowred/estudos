@@ -1,4 +1,4 @@
-package br.com.contmatic.estudos.prova02.colletions.list;
+package br.com.contmatic.estudos.etapa2.colletions.list;
 
 import java.util.ArrayList;
 import java.util.Collections;

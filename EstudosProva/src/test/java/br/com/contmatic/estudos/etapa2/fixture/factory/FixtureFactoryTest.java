@@ -1,4 +1,4 @@
-package br.com.contmatic.estudos.prova02.fixture.factory;
+package br.com.contmatic.estudos.etapa2.fixture.factory;
 
 import org.junit.BeforeClass;
 import org.junit.Test;

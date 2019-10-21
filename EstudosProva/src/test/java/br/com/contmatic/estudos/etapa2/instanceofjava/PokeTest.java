@@ -1,4 +1,4 @@
-package br.com.contmatic.estudos.prova02.instanceofjava;
+package br.com.contmatic.estudos.etapa2.instanceofjava;
 
 import static org.junit.Assert.*;
 

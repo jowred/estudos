@@ -1,4 +1,4 @@
-package br.com.contmatic.estudos.prova02.enums;
+package br.com.contmatic.estudos.etapa2.enums;
 
 import static org.junit.Assert.*;
 

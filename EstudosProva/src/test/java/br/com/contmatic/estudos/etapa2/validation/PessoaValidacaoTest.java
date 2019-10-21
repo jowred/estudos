@@ -1,4 +1,4 @@
-package br.com.contmatic.estudos.prova02.validation;
+package br.com.contmatic.estudos.etapa2.validation;
 
 import javax.validation.Validation;
 import javax.validation.Validator;

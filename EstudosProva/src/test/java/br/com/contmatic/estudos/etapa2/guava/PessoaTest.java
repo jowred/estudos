@@ -1,4 +1,4 @@
-package br.com.contmatic.estudos.prova02.guava;
+package br.com.contmatic.estudos.etapa2.guava;
 
 import org.junit.After;
 import org.junit.Before;
