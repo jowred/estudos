@@ -1,10 +1,10 @@
 package br.com.contmatic.estudos.etapa2.colletions.list;
 
+import java.text.Collator;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
+import java.util.Locale;
 
 import org.junit.Test;
 
@@ -36,7 +36,9 @@ public class ListTest {
 		alunos.add("Antônio Sousa");
 		alunos.add("Lúcia Ferreira");
 		System.out.println(alunos);
-		Collections.sort(alunos);
+		Locale portuguese = new Locale("pt_BR");
+		Collator portugueseCollator = Collator.getInstance(portuguese);
+		Collections.sort(alunos, portugueseCollator);
 		System.out.println(alunos);
 	}
 	
@@ -51,20 +53,6 @@ public class ListTest {
 		alunos.add(c);
 		System.out.println(alunos);
 		Collections.sort(alunos);
-		System.out.println(alunos);
-	}
-	
-	@Test
-	public void testSetAluno() {
-		Set<Aluno> alunos = new HashSet<>();
-		Aluno a = new Aluno("José Silveira", "Informática", 0f);
-		Aluno b = new Aluno("Maria dos Santos", "Administração", 0f);
-		Aluno c = new Aluno("Joao da Silva", "Informática", 0f);
-		Aluno d = new Aluno("José Silveira", "Informática", 0f);
-		a.cadastrar(alunos);
-		b.cadastrar(alunos);
-		c.cadastrar(alunos);
-		d.cadastrar(alunos);
 		System.out.println(alunos);
 	}
 }
