@@ -22,8 +22,6 @@
 	    <version>4.11</version>
 	    <scope>test</scope>
 	</dependency>
-
-	
 	<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
 	<dependency>
 	    <groupId>com.google.guava</groupId>
@@ -43,7 +41,6 @@
 	    <artifactId>validation-api</artifactId>
 	    <version>2.0.0.Final</version>
 	</dependency>
-	
 	<dependency>
     	<groupId>org.hibernate.validator</groupId>
     	<artifactId>hibernate-validator</artifactId>
@@ -59,19 +56,22 @@
 	    <artifactId>javax.el-api</artifactId>
 	    <version>3.0.0</version>
 	</dependency>
-	 
 	<dependency>
 	    <groupId>org.glassfish.web</groupId>
 	    <artifactId>javax.el</artifactId>
 	    <version>2.2.6</version>
 	</dependency>
-	
 	<!-- https://mvnrepository.com/artifact/log4j/log4j -->
 	<dependency>
 	    <groupId>log4j</groupId>
 	    <artifactId>log4j</artifactId>
 	    <version>1.2.17</version>
 	</dependency>
-	
+	<!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
+	<dependency>
+	    <groupId>joda-time</groupId>
+	    <artifactId>joda-time</artifactId>
+	    <version>2.10.4</version>
+	</dependency>
   </dependencies>
 </project>

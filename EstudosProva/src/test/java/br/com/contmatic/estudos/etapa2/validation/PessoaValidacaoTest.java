@@ -1,5 +1,12 @@
 package br.com.contmatic.estudos.etapa2.validation;
 
+import static org.hamcrest.CoreMatchers.hasItem;
+import static org.junit.Assert.assertThat;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
@@ -7,8 +14,6 @@ import javax.validation.ValidatorFactory;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import br.com.contmatic.estudos.etapa2.validation.PessoaValidacao;
 
 public class PessoaValidacaoTest {
 
@@ -43,10 +48,22 @@ public class PessoaValidacaoTest {
 	
 	@Test
 	public void nao_deve_validar_nenhum_campo() {
-		pv.setNome(null);
+		pv.setNome("José");
 		pv.setIdade(-1);
 		pv.setCpf("75894587458");
 		pv.setRg(null);
-		pv.validar(validator);
+		Set<ConstraintViolation<PessoaValidacao>> validate = validator.validate(pv);
+		for (ConstraintViolation<PessoaValidacao> constraintViolation : validate) {
+			System.out.println(constraintViolation.getMessage());
+		}
+		assertThat(getErros(pv), hasItem("Nome não pode ser nulo."));
+	}
+	
+	public Set<String> getErros(PessoaValidacao pv) {
+		Set<String> erros = new HashSet<>();
+		for (ConstraintViolation<PessoaValidacao> constraintViolation : validator.validate(pv)) {
+			erros.add(constraintViolation.getMessage());
+		}
+		return erros;
 	}
 }

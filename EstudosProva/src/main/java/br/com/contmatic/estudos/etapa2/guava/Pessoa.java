@@ -53,7 +53,8 @@ public class Pessoa {
 	}
 
 	public void setIdade(Integer idade) {
-		checkNotNull(idade, "Idade não pode ser nula.");
+		int i = 0;
+		checkNotNull(idade, "A idade não pode ser nula.");
 		checkArgument(idade >= 0, "A idade é negativa (%s).", idade);
 		checkArgument(idade <= 120, "A idade não pode ser superior a 120 anos (%s).", idade);
 		this.idade = idade;
