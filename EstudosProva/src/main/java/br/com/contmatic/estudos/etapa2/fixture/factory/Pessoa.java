@@ -24,7 +24,7 @@ public class Pessoa {
 
 	public void setNome(String nome) {
 		checkNotNull(nome, "Nome não pode ser nulo.");
-		checkArgument(!nome.equals(""), "Nome não estar em branco.");
+		checkArgument(!nome.equals(""), "Nome não pode estar em branco.");
 		this.nome = nome;
 	}
 
@@ -70,5 +70,13 @@ public class Pessoa {
 	public Pessoa getFilho(int index) {
 		checkElementIndex(index, filhos.size());
 		return filhos.get(index);
+	}
+	
+	@Override
+	public String toString() {
+		return "Nome: " + this.nome + "\n"
+				+ "Idade: " + this.idade + "\n"
+				+ "CPF: " + this.cpf + "\n"
+				+ "RG: " + this.rg;
 	}
 }

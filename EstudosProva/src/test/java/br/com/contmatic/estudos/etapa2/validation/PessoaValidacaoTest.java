@@ -17,6 +17,8 @@ import org.junit.Test;
 
 public class PessoaValidacaoTest {
 
+	private static final String NOME_MIN_MAX = "Nome deve ter de 2 a 100 caracteres.";
+	
 	private PessoaValidacao pv;
 	
 	private ValidatorFactory factory;
@@ -48,7 +50,7 @@ public class PessoaValidacaoTest {
 	
 	@Test
 	public void nao_deve_validar_nenhum_campo() {
-		pv.setNome("José");
+		pv.setNome("J");
 		pv.setIdade(-1);
 		pv.setCpf("75894587458");
 		pv.setRg(null);
@@ -56,7 +58,7 @@ public class PessoaValidacaoTest {
 		for (ConstraintViolation<PessoaValidacao> constraintViolation : validate) {
 			System.out.println(constraintViolation.getMessage());
 		}
-		assertThat(getErros(pv), hasItem("Nome não pode ser nulo."));
+		assertThat(getErros(pv), hasItem(NOME_MIN_MAX));
 	}
 	
 	public Set<String> getErros(PessoaValidacao pv) {

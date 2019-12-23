@@ -6,13 +6,20 @@ import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.br.CPF;
 
 public class PessoaValidacao {
 	
-	@NotNull(message = "Nome não pode ser nulo.")
+	private static final String NOME_MIN_MAX = "Nome deve ter de {min} a {max} caracteres.";
+
+	private static final String NOME_NULO_VAZIO = "Nome não pode ser nulo ou vazio.";
+
+	@Length(min = 2, max = 100, message = NOME_MIN_MAX)
+	@NotBlank(message = NOME_NULO_VAZIO)
 	private String nome;
 	
 	@NotNull(message = "CPF não pode ser nulo.")
